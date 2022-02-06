@@ -43,9 +43,6 @@ const DashboardPage = ({navigation}) => {
         }
     }, [isLoading, error]);
 
-    console.log("user ==>> ", user);
-    console.log("save ==>> ", save);
-
     const selectFile = async () => {
         const options = {
             mediaType: "photo",
@@ -57,9 +54,6 @@ const DashboardPage = ({navigation}) => {
             setImageSourcePath(val.uri);
             const file = new Moralis.File(val.fileName, val);
             const saveIpfsData = await file.saveIPFS();
-            console.log("file ==>> ", file)
-            console.log("url ==>> ", file.url())
-            console.log("saveIpfsData ==>> ", saveIpfsData);
             setAvatar(file.url());
         });
     };
@@ -80,7 +74,6 @@ const DashboardPage = ({navigation}) => {
     };
 
     const renderItem = ({item}) => {
-        // console.log("items ==>> ", item)
         return (
             <View style={{
                 paddingBottom: 10,

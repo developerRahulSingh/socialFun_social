@@ -23,7 +23,6 @@ const Post = ({navigation}) => {
     }, [isLoading, error]);
 
     const renderItem = ({item}) => {
-        console.log("item ==>> ", item);
         return (
             <View style={{
                 paddingBottom: 10,

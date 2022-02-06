@@ -19,22 +19,11 @@ const DealsPage = ({navigation}) => {
             console.log("Loading ==>> ");
         } else {
             let arr = JSON.parse(JSON.stringify(data));
-            console.log("Array ==>> ", arr);
             setDealsData(arr);
         }
     }, [isLoading, error]);
 
-    // const renderItems = ({item}) => {
-    //     console.log("Super deal ==>> ", item);
-    //     return(
-    //         <View>
-    //             <Text> hiiiii</Text>
-    //         </View>
-    //     );
-    // }
-
     const renderItems = ({item}) => {
-        console.log("item ==>> ", item);
         const endDate = moment(item.superDeals.end.iso).format("MMM-DD-YYYY");
         const startDate = moment(item.superDeals.start.iso).format("MMM-DD-YYYY");
         return (

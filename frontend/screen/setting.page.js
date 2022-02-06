@@ -35,7 +35,6 @@ const SettingPage = ({navigation}) => {
             console.log("Loading ==>> ");
         } else {
             let arr = JSON.parse(JSON.stringify(data));
-            console.log("arr ==>> ", arr);
             setMoralisData(arr);
         }
     }, [isLoading, error]);
@@ -87,7 +86,6 @@ const SettingPage = ({navigation}) => {
         }
         await save({saveData, user}).then((post) => {
             alert('New object created with objectId: ' + post.id);
-            console.log(" POst ==>> ", post);
         }, (error) => {
             alert('Failed to create new object, with error code: ' + error.message);
         }).catch((e) => {
@@ -215,7 +213,6 @@ const SettingPage = ({navigation}) => {
                             style={{height: 100, width: 100}}
                         />
                     </View>
-                    console.log("val render return ==>> ", val);
                 })}
         </View>
     );

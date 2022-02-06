@@ -7,10 +7,10 @@ import {Button} from "react-native-elements";
 
 const LoginPage = ({navigation}) => {
     const connector = useWalletConnect();
-    // const [email, setEmail] = React.useState("");
-    const [email, setEmail] = React.useState("Test@test3.com");
-    // const [password, setPassword] = React.useState("");
-    const [password, setPassword] = React.useState("Pass@1234");
+    const [email, setEmail] = React.useState("");
+    // const [email, setEmail] = React.useState("Test@test3.com");
+    const [password, setPassword] = React.useState("");
+    // cons t [password, setPassword] = React.useState("Pass@1234");
     const {
         authenticate,
         authError,
@@ -39,8 +39,6 @@ const LoginPage = ({navigation}) => {
         authenticate({connector})
             .then(() => {
                 if (isAuthenticated) {
-                    console.log("user login Success ==>> ", user);
-                    console.log("Auth isAuthenticated ==>> ", isAuthenticated);
                     navigation.replace("BottomTabNavigation");
                 } else if (authError) {
                     console.log("Auth error ==>> ", authError);

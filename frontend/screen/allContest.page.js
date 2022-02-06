@@ -64,7 +64,6 @@ const AllContestPage = ({navigation}) => {
                 alert(response.customButton);
             } else {
                 const selectedFile = JSON.parse(JSON.stringify(response));
-                console.log('response source==>> ', selectedFile);
                 setImageResourcePath(selectedFile.assets);
                 imageResourcePath.map(async (val) => {
                     setImageSourcePath(val.uri);

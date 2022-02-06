@@ -12,9 +12,11 @@ import AllContestPage from "./screen/allContest.page";
 import SplashScreen from "./component/SplashScreen";
 import CreatedContestPage from "./screen/createdContest.page";
 import DealsPage from "./screen/deals/deals.page";
+import SuperWorldPage from "./screen/superWorld/superWorld.page";
 import ParticipatedContestPage from "./screen/participatedContest.page";
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import Fontistoicons from 'react-native-vector-icons/Fontisto'
 
 const Tab = createMaterialBottomTabNavigator();
 const TopTab = createMaterialTopTabNavigator();
@@ -38,6 +40,9 @@ function Home(): JSX.Element {
                         iconName = focused ? 'list' : 'list-outline';
                     } else if (route.name === 'Deals') {
                         iconName = focused ? 'gift' : 'gift-outline';
+                    } else if (route.name === 'Super World') {
+                        iconName = focused ? 'world' : 'world-o';
+                        return <Fontistoicons name={iconName} size={24} color={color}/>;
                     }
 
                     // You can return any component that you like here!
@@ -53,8 +58,8 @@ function Home(): JSX.Element {
                 component={Context}
             />
             <Tab.Screen
-                name="Deals"
-                component={DealsPage}
+                name="Super World"
+                component={SuperWorldPage}
             />
         </Tab.Navigator>
     );
@@ -84,7 +89,7 @@ function App(): JSX.Element {
                     headerTintColor: '#fff',
                     headerTitleStyle: {
                         fontWeight: 'bold',
-                        fontStyle:"italic",
+                        fontStyle: "italic",
                         fontSize: 28
                     },
                     // headerShown: false,
